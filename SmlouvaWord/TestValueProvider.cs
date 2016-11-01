@@ -8,6 +8,10 @@ namespace SmlouvaWord
 {
     class TestValueProvider : IValueProvider
     {
+        public TestValueProvider()
+        {
+        }
+
         public bool GetValue(string name, out string result)
         {
             result = name;
