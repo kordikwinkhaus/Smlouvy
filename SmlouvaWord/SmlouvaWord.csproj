@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicSaveFileNameProvider.cs" />
+    <Compile Include="ISaveFileNameProvider.cs" />
     <Compile Include="IValueProvider.cs" />
     <Compile Include="Parameters.cs" />
     <Compile Include="Program.cs" />

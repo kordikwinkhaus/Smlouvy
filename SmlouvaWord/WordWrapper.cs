@@ -9,16 +9,19 @@ namespace SmlouvaWord
         private const int wdPropertyTitle = 1;
 
         private readonly IValueProvider _provider;
+        private readonly ISaveFileNameProvider _saveFileNameProvider;
         private readonly Parameters _parameters;
         private dynamic _word;
         private dynamic _doc;
 
-        internal WordWrapper(IValueProvider provider, Parameters parameters)
+        internal WordWrapper(IValueProvider provider, ISaveFileNameProvider saveFileNameProvider, Parameters parameters)
         {
             if (provider == null) throw new ArgumentNullException(nameof(provider));
+            if (saveFileNameProvider == null) throw new ArgumentNullException(nameof(saveFileNameProvider));
             if (parameters == null) throw new ArgumentNullException(nameof(parameters));
 
             _provider = provider;
+            _saveFileNameProvider = saveFileNameProvider;
             _parameters = parameters;
         }
 
@@ -88,15 +91,7 @@ namespace SmlouvaWord
 
         private void SaveDocument()
         {
-            var xmlFileInfo = new FileInfo(_parameters.XmlDataPath);
-            var templateFileInfo = new FileInfo(_parameters.TemplatePath);
-            string baseFileName = xmlFileInfo.Name.Replace(xmlFileInfo.Extension, "") + templateFileInfo.Extension;
-            baseFileName = baseFileName.Replace("/", "_")
-                                       .Replace("\\", "_")
-                                       .Replace(" ", "_")
-                                       .Replace("&", "_");
-
-            string saveFileName = Path.Combine(_parameters.TargetDirPath, baseFileName);
+            string saveFileName = _saveFileNameProvider.GetSaveFileName();
             _doc.SaveAs(saveFileName);
 
             var saveFileInfo = new FileInfo(saveFileName);

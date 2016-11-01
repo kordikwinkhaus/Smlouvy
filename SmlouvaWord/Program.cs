@@ -14,7 +14,8 @@ namespace SmlouvaWord
         {
             var parameters = new Parameters(args);
             var valueProvider = new TestValueProvider();
-            var wrapper = new WordWrapper(valueProvider, parameters);
+            var saveFileNameProvider = new BasicSaveFileNameProvider(parameters);
+            var wrapper = new WordWrapper(valueProvider, saveFileNameProvider, parameters);
             wrapper.Process();
 
             if (wrapper.MissingFields.Count != 0)
