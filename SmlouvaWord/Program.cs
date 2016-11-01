@@ -12,19 +12,17 @@ namespace SmlouvaWord
         [STAThread]
         static void Main(string[] args)
         {
-            // Argumenty 0 - soubor XML s daty
-            //           1 - název souboru šablony 
-            //           2 - cesta pro uložení smluv
-            //           3 - connection string
+            var parameters = new Parameters(args);
+            var valueProvider = new TestValueProvider();
+            var wrapper = new WordWrapper(valueProvider, parameters);
+            wrapper.Process();
 
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < args.Length; i++)
+            if (wrapper.MissingFields.Count != 0)
             {
-                sb.AppendLine(args[i]);
-            }
+                string fieldNames = string.Join(", ", wrapper.MissingFields);
+                string msg = "Pro některá pole v dokumentu nebyla nalezena hodnota. Názvy polí: " + fieldNames;
 
-            MessageBox.Show(sb.ToString());
+            }
         }
     }
 }
