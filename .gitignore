@@ -1,0 +1,6 @@
+.gitignore.swp
+*/obj/*
+*/bin/*
+*suo
+packages/*
+
