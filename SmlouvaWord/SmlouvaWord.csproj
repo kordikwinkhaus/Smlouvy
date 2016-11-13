@@ -48,10 +48,13 @@
       <HintPath>..\packages\WinkhausCR.Bugs.2.1.1\lib\net46\WinkhausCR.Bugs.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WinkhausCR.NtwLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinkhausCR.NtwLib.1.0.0\lib\net46\WinkhausCR.NtwLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicSaveFileNameProvider.cs" />
-    <Compile Include="DecimalExtensions.cs" />
     <Compile Include="ISaveFileNameProvider.cs" />
     <Compile Include="IValueProvider.cs" />
     <Compile Include="Parameters.cs" />
@@ -83,7 +86,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <Import Project="..\NumberToWordsLib\NumberToWordsLib.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
