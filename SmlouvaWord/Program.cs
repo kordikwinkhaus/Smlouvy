@@ -9,11 +9,11 @@ namespace SmlouvaWord
         private const string TITLE = "Export smlouvy";
 
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
             try
             {
-                var parameters = new Parameters(args);
+                var parameters = new Parameters(Environment.CommandLine);
                 var xmlValueProvider = new XmlValueProvider(parameters);
                 var sqlValueProvider = new SqlValueProvider(parameters, xmlValueProvider);
                 var saveFileNameProvider = new BasicSaveFileNameProvider(parameters);
@@ -26,6 +26,10 @@ namespace SmlouvaWord
                     string msg = "Pro některá pole v dokumentu nebyla nalezena hodnota.\r\nNázvy polí: " + fieldNames + ".";
                     MessageBox.Show(msg, TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (ModelException mex)
+            {
+                MessageBox.Show(mex.Message, TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

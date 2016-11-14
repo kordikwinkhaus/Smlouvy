@@ -24,6 +24,10 @@ namespace SmlouvaWord
             if (_xmlProvider.GetValue("ID_DOKUMENTU", out sid))
             {
                 int id = int.Parse(sid);
+                if (id == 0)
+                {
+                    throw new ModelException("Uložte prosím dokument a akci opakujte.");
+                }
 
                 string sql = @"SELECT o.opis AS akce, o.referencja AS ref_cislo, o.oferta_t as cislo_nabidky, ISNULL(ro.oferta_dat, o.modyf) as datum_zmeny, o.ofr_utworz as datum_nabidky, 
 RTRIM(LTRIM(RTRIM(LTRIM(k.pt+' '+k.imie))+' '+k.nazwisko)) AS obj_jmeno, k.firma AS obj_firma, k.telefon, k.email, k.bank AS banka, k.konto AS ucet,

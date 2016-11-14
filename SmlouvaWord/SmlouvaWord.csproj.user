@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>"C:\WHOkna5124\Umowy\0003.2014-.xml" "D:\klienti\jvokna\2016-10-31_smlouvy\SOD %28krátká verze%29.doc" "C:\WHOkna5124\Umowy" "Application Name=Okna_Shared%3bProvider=SQLNCLI11%3bDataTypeCompatibility=80%3bMARS Connection=True%3bServer=.\OKNA%3bDatabase=wh_jvokna%3bTrusted_Connection=yes%3bAuto Translate=False"</StartArguments>
+    <StartArguments>"C:\WHOkna5124\Umowy\0003.2014-.xml" "D:\klienti\jvokna\2016-10-31_smlouvy\SOD %28krátká verze%29.doc" "C:\WHOkna5124\Umowy\" "Application Name=Okna_Shared%3bProvider=SQLNCLI11%3bDataTypeCompatibility=80%3bMARS Connection=True%3bServer=.\OKNA%3bDatabase=wh_jvokna%3bTrusted_Connection=yes%3bAuto Translate=False"</StartArguments>
   </PropertyGroup>
 </Project>

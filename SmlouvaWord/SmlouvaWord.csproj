@@ -60,6 +60,7 @@
     <Compile Include="BasicSaveFileNameProvider.cs" />
     <Compile Include="ISaveFileNameProvider.cs" />
     <Compile Include="IValueProvider.cs" />
+    <Compile Include="ModelException.cs" />
     <Compile Include="Parameters.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
