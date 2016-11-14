@@ -80,7 +80,11 @@ namespace SmlouvaWord
                 }
             }
 
-            fields.Update();
+            try
+            {
+                fields.Update();
+            }
+            catch { }
         }
 
         private void SetFieldValue(dynamic field, string value)

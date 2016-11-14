@@ -25,7 +25,7 @@ namespace SmlouvaWord.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\export")]
+        [global::System.Configuration.DefaultSettingValueAttribute("X:\\temp")]
         public string TargetDirPath {
             get {
                 return ((string)(this["TargetDirPath"]));

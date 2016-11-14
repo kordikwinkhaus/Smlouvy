@@ -63,6 +63,7 @@
     <Compile Include="ToWordsValueProvider.cs" />
     <Compile Include="TestValueProvider.cs" />
     <Compile Include="WordWrapper.cs" />
+    <Compile Include="XmlValueProvider.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
