@@ -54,12 +54,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\whokna-core\Okna.Documents\Okna.Data\Utils.cs">
+      <Link>Utils.cs</Link>
+    </Compile>
     <Compile Include="BasicSaveFileNameProvider.cs" />
     <Compile Include="ISaveFileNameProvider.cs" />
     <Compile Include="IValueProvider.cs" />
     <Compile Include="Parameters.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlValueProvider.cs" />
     <Compile Include="ToWordsValueProvider.cs" />
     <Compile Include="TestValueProvider.cs" />
     <Compile Include="WordWrapper.cs" />

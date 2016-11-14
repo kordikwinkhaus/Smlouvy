@@ -14,9 +14,10 @@ namespace SmlouvaWord
             try
             {
                 var parameters = new Parameters(args);
-                var valueProvider = new XmlValueProvider(parameters);
+                var xmlValueProvider = new XmlValueProvider(parameters);
+                var sqlValueProvider = new SqlValueProvider(parameters, xmlValueProvider);
                 var saveFileNameProvider = new BasicSaveFileNameProvider(parameters);
-                var wrapper = new WordWrapper(valueProvider, saveFileNameProvider, parameters);
+                var wrapper = new WordWrapper(sqlValueProvider, saveFileNameProvider, parameters);
                 wrapper.Process();
 
                 if (wrapper.MissingFields.Count != 0)
